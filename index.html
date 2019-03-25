@@ -1,0 +1,146 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Encryption Test</title>
+  <link rel="stylesheet" href="resources/css/bootstrap.min.css">
+
+</head>
+
+<body>
+<!-- MODAL -->
+	<div id="frozenAdmissionsAddPlotsModal" role="dialog">
+	    <!-- Modal Content -->
+	    <div class="modal-content" name="frozenAdmissions">
+	        <div class="modal-header">
+	            <h3 class="modal-title" style="text-align: center;">Historical Admissions Data</h3>
+	        </div>
+	        <div class="modal-body container">
+	            <!--
+	                <div id="enrollmentModalFilters" class="row">
+	                    <h4 style="display: inline;">Filters: </h4>
+	                    <div class="filter-item-delete">
+	                        <a>X     Undergraduate</a>
+	                    </div>
+	                </div>
+	            -->
+	            <div class="row checkbox-modal">
+	                <div class="col-md-4">
+	                    <ul id="admissions_total_students_frozen_checkboxes" style="display: none;">
+	                        <li class="checkbox">
+	                            <label><input type="checkbox" name="Total" value="Total">Total Students</label>
+	                        </li>
+	                    </ul>
+	                    <div class="checkbox">
+	                        <label><h4>Division/Candidacy</h4></label>
+	                    </div>
+	                    <ul id="admissions_candidacy_frozen_checkboxes">
+	                        <li class="checkbox">
+	                            <label><input type="checkbox" name="CANDIDACY_TYPE" value="newFreshman">New Freshman</label>
+	                        </li>
+	                        <li class="checkbox">
+	                            <label><input type="checkbox" name="CANDIDACY_TYPE" value="newUndergraduate">New Undergraduate</label>
+	                        </li>
+	                        <li class="checkbox">
+	                            <label><input type="checkbox" name="CANDIDACY_TYPE" value="newGraduate">New Graduate</label>
+	                        </li> <!-- TODO: MIGHT NEED TO CHANGE TO name="DIV_CDE" value="GR" -->
+	                    </ul>
+	                    <div class="checkbox">
+	                        <label><h4>Load</h4></label>
+	                    </div>
+	                    <ul id="admissions_load_frozen_checkboxes">
+	                        <li class="checkbox"><label><input type="checkbox" name="LOAD_P_F" value="F">Full Time</label></li>
+	                        <li class="checkbox"><label><input type="checkbox" name="LOAD_P_F" value="P">Part Time</label></li>
+	                    </ul>
+	                    <div class="checkbox">
+	                        <label><h4>Gender</h4></label>
+	                    </div>
+	                    <ul id="admissions_gender_frozen_checkboxes">
+	                        <li class="checkbox"><label><input type="checkbox" name="GENDER" value="M">Male</label></li>
+	                        <li class="checkbox"><label><input type="checkbox" name="GENDER" value="F">Female</label></li>
+	                    </ul>
+	                </div>
+	                    <div class="col-md-4">
+	                        <div class="checkbox">
+	                            <label><h4>Stage</h4></label>
+	                        </div>
+	                        <ul id="admissions_stage_frozen_checkboxes">
+	                            <li class="checkbox"><label><input type="checkbox" name="STAGE" value="AC">Accepted</label></li>
+	                            <li class="checkbox"><label><input type="checkbox" name="STAGE" value="AP">Applied</label></li>
+	                            <li class="checkbox"><label><input type="checkbox" name="STAGE" value="CAAC">Cancelled After Accepted</label></li>
+	                            <li class="checkbox"><label><input type="checkbox" name="STAGE" value="CAAP">Cancelled After Applied</label></li>
+	                            <li class="checkbox"><label><input type="checkbox" name="STAGE" value="CACF">Cancelled After Confirmed</label></li>
+	                            <li class="checkbox"><label><input type="checkbox" name="STAGE" value="CAREG">Cancelled After Registered</label></li>
+	                            <li class="checkbox"><label><input type="checkbox" name="STAGE" value="CF">Confirmed</label></li>
+	                            <li class="checkbox"><label><input type="checkbox" name="STAGE" value="NM">Non-Matriculated</label></li>
+	                            <li class="checkbox"><label><input type="checkbox" name="STAGE" value="REG">Registered</label></li>
+	                            <li class="checkbox"><label><input type="checkbox" name="STAGE" value="RJ">Rejected</label></li>
+	                            <li class="checkbox"><label><input type="checkbox" name="STAGE" value="WL">Wait List</label></li>
+	                            <li class="checkbox"><label><input type="checkbox" name="STAGE" value="WLSA">Wait List Stap Accept</label></li>
+	                            <li class="checkbox"><label><input type="checkbox" name="STAGE" value="WDREG">Withdrew After Registration</label></li>
+	                        </ul>
+	                        <div class="checkbox">
+	                            <label><h4>Degree Code</h4></label>
+	                        </div>
+	                        <ul id="admissions_degree_frozen_checkboxes">
+	                            <li class="checkbox"><label><input type="checkbox" name="DEGREE_CDE" value="AA">Associate in Arts</label></li>
+	                            <li class="checkbox"><label><input type="checkbox" name="DEGREE_CDE" value="AAS">Associate in Applied Science</label></li>
+	                            <li class="checkbox"><label><input type="checkbox" name="DEGREE_CDE" value="ADC">Advanced Cert - Post Bachelors</label></li>
+	                            <li class="checkbox"><label><input type="checkbox" name="DEGREE_CDE" value="ADV">Advanced Cert - Post Masters</label></li>
+	                            <li class="checkbox"><label><input type="checkbox" name="DEGREE_CDE" value="BA">Bachelor of Arts</label></li>
+	                            <li class="checkbox"><label><input type="checkbox" name="DEGREE_CDE" value="BA/MS">BA/MS - 5 Year Program</label></li>
+	                            <li class="checkbox"><label><input type="checkbox" name="DEGREE_CDE" value="BFA">Bachelor of Fine Arts</label></li>
+	                            <li class="checkbox"><label><input type="checkbox" name="DEGREE_CDE" value="BS">Bachelor of Science</label></li>
+	                            <li class="checkbox"><label><input type="checkbox" name="DEGREE_CDE" value="BSW">Bachelor of Social Work</label></li>
+	                            <li class="checkbox"><label><input type="checkbox" name="DEGREE_CDE" value="MBA">Master of Business Admin</label></li>
+	                            <li class="checkbox"><label><input type="checkbox" name="DEGREE_CDE" value="MS">Master of Science</label></li>
+	                            <li class="checkbox"><label><input type="checkbox" name="DEGREE_CDE" value="PHD">Doctor of Philosophy</label></li>
+	                        </ul>
+	                    </div>
+	                <div class="col-md-4">
+	                    <div class="checkbox">
+	                        <label><h4>Department Code</h4></label>
+	                    </div>
+	                    <ul id="admissions_department_frozen_checkboxes">
+	                        <li class="checkbox"><label><input type="checkbox" name="DEPT_CDE" value="ACC">Accounting</label></li>
+	                        <li class="checkbox"><label><input type="checkbox" name="DEPT_CDE" value="AHS">Allied Health Sciences</label></li>
+	                        <li class="checkbox"><label><input type="checkbox" name="DEPT_CDE" value="ART">Art</label></li>
+	                        <li class="checkbox"><label><input type="checkbox" name="DEPT_CDE" value="BIO">Biology</label></li>
+	                        <li class="checkbox"><label><input type="checkbox" name="DEPT_CDE" value="BUS">Business</label></li>
+	                        <li class="checkbox"><label><input type="checkbox" name="DEPT_CDE" value="COM">Communication Arts</label></li>
+	                        <li class="checkbox"><label><input type="checkbox" name="DEPT_CDE" value="CRJ">Criminal Justice</label></li>
+	                        <li class="checkbox"><label><input type="checkbox" name="DEPT_CDE" value="CSC">Computer Science</label></li>
+	                        <li class="checkbox"><label><input type="checkbox" name="DEPT_CDE" value="EDU">Education</label></li>
+	                        <li class="checkbox"><label><input type="checkbox" name="DEPT_CDE" value="ENG">English</label></li>
+	                        <li class="checkbox"><label><input type="checkbox" name="DEPT_CDE" value="ENV">Environmental Studies</label></li>
+	                        <li class="checkbox"><label><input type="checkbox" name="DEPT_CDE" value="HIS">History</label></li>
+	                        <li class="checkbox"><label><input type="checkbox" name="DEPT_CDE" value="INT">Interdisciplinary Studies</label></li>
+	                        <li class="checkbox"><label><input type="checkbox" name="DEPT_CDE" value="LAS">Liberal Arts</label></li>
+	                        <li class="checkbox"><label><input type="checkbox" name="DEPT_CDE" value="MAT">Math</label></li>
+	                        <li class="checkbox"><label><input type="checkbox" name="DEPT_CDE" value="MOD">Modern Language</label></li>
+	                        <li class="checkbox"><label><input type="checkbox" name="DEPT_CDE" value="MUS">Music</label></li>
+	                        <li class="checkbox"><label><input type="checkbox" name="DEPT_CDE" value="NUR">Nursing</label></li>
+	                        <li class="checkbox"><label><input type="checkbox" name="DEPT_CDE" value="PHI">Philosophy</label></li>
+	                        <li class="checkbox"><label><input type="checkbox" name="DEPT_CDE" value="POL">Political</label></li>
+	                        <li class="checkbox"><label><input type="checkbox" name="DEPT_CDE" value="PSY">Psychology</label></li>
+	                        <li class="checkbox"><label><input type="checkbox" name="DEPT_CDE" value="SOC">Sociology</label></li>
+	                        <li class="checkbox"><label><input type="checkbox" name="DEPT_CDE" value="SPL">Speech Language Pathology</label></li>
+	                        <li class="checkbox"><label><input type="checkbox" name="DEPT_CDE" value="SWK">Social Work</label></li>
+	                        <li class="checkbox"><label><input type="checkbox" name="DEPT_CDE" value="THA">Theatre Arts</label></li>
+	                        <li class="checkbox"><label><input type="checkbox" name="DEPT_CDE" value="THE">Theology</label></li>
+	                        <li class="checkbox"><label><input type="checkbox" name="DEPT_CDE" value="UND">Undeclared</label></li>
+	                    </ul>
+	                </div>
+	                <button type="button" id="submitButton" class="btn btn-primary">Submit</button>
+	            </div>
+	        </div>
+	    </div>
+	</div>
+</body>
+	<script src='resources/js/jquery.js'></script>
+	<script src='resources/js/scripts.js'></script>
+</html>
+
+<a href="/test.php"></a>
