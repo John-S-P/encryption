@@ -1,0 +1,28 @@
+const json = {
+	'hey': [1,2,3],
+	'innerObject': {
+		'a': [1,2,3],
+		'b': [4,5,6]
+	}
+}
+
+
+json['hey']
+// output: [1,2,3]
+// or
+json.hey
+
+
+json['innerObject']
+
+Object.keys(json['innerObject']).forEach(function(element) {
+	console.log(json['innerObject'][element])
+})
+
+// output: ['a','b']
+
+
+{
+	'a': [1,2,3],
+	'b': [4,5,6]
+}

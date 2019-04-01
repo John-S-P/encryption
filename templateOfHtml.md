@@ -1,4 +1,3 @@
-
 { 
 	'Division/Candidacy': {
         'CANDIDACY_TYPE': ['newFreshman', 'newUndergraduate', 'newGraduate'],
@@ -7,7 +6,7 @@
 }
 
 <h4> "Division/Candidacy" </h4>
-	<div class="col-md-4">
+<div class="col-md-4">
 		<ul>
 			<li class="checkbox">
 				<label>
